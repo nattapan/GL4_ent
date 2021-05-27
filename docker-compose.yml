@@ -1,5 +1,5 @@
 
-version: '5'
+version: '2'
 services:
   # MongoDB: https://hub.docker.com/_/mongo/
   mongodb:
@@ -37,7 +37,7 @@ services:
       - GRAYLOG_HTTP_EXTERNAL_URI=http://192.168.0.254:9000/
       # can set to HTTPS too ,need to set https proxy for this
       # - GRAYLOG_HTTP_EXTERNAL_URI=https://192.168.0.254/
-entrypoint: /usr/bin/tini -- wait-for-it elasticsearch:9200 --  /docker-entrypoint.sh
+    entrypoint: /usr/bin/tini -- wait-for-it elasticsearch:9200 --  /docker-entrypoint.sh
     links:
       - mongodb:mongo
       - elasticsearch
