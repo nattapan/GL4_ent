@@ -37,7 +37,8 @@ services:
     environment:
       # CHANGE ME (must be at least 16 characters)!
       - GRAYLOG_PASSWORD_SECRET=0123456789ABCDEF
-      # Password: admin
+      # Password: admin 
+      # Create new one by using for example: echo -n your_password | shasum -a 256
       - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
       #change external URI to match your deploy
       - GRAYLOG_HTTP_EXTERNAL_URI=http://192.168.0.254:9000/
